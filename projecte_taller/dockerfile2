@@ -1,0 +1,15 @@
+FROM mariadb:latest
+
+RUN apt-get update && \
+    apt-get install -y cron nano iputils-ping curl mariadb-client && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY my-cron-job /etc/backup/my-cron-job
+COPY entrypoint.sh /entrypoint.sh
+COPY scripts /etc/backup/
+
+RUN touch /var/log/cron.log
+RUN cat /etc/backup/my-cron-job >> /etc/crontab
+RUN service cron restart
+
+ENTRYPOINT ["/entrypoint.sh"]

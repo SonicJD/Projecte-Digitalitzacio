@@ -1,0 +1,9 @@
+zone "taller.local" {
+    type master;
+    file "/etc/bind/db.taller.local";
+};
+
+zone "0.18.172.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.172.18.rev";
+};

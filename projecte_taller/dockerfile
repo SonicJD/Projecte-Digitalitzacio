@@ -1,0 +1,26 @@
+FROM python:3.11.9-slim
+
+# Instalar bind9 y utilidades
+RUN apt-get update && apt-get install -y bind9 dnsutils && rm -rf /var/lib/apt/lists/*
+
+COPY . /app
+WORKDIR /app
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar configuración bind9
+COPY named.conf.options /etc/bind/named.conf.options
+COPY named.conf.local /etc/bind/named.conf.local
+COPY db.taller.local /etc/bind/db.taller.local
+COPY db.172.18.rev /etc/bind/db.172.18.rev
+
+# Permisos correctos para bind
+RUN chown -R bind:bind /etc/bind
+
+# Script para arrancar bind9 y la app
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
+EXPOSE 5000 53/udp 53/tcp
+
+CMD ["/start.sh"]

@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: black; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #313131; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #575757; 
+}
+
+#llibreria{
+    color: #CF7A5B;
+}
+#virtual{
+    color: #80997C;
+}
+
+li{
+    color: #9CAD8A;
+}
+#banner{
+    display: flex;
+    justify-content: center;
+}
+#titol{
+    display: flex;
+    align-items: center;
+    flex: 5;
+}
+#logo{
+    width: 150px;
+}
+
+#nav{
+    border-bottom: 1px solid brown;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+nav ul li{
+    display: inline-block;
+    width: 8em;
+    text-align: center;
+    font-size: 1.25em;
+       
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    color: #CC196C;
+    transition: color 0.1s;
+    transition: font-size 1s;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    color: #CC196C;
+    font-size: 1.25em;
+}
+main{
+    margin-top: 3em;
+    background-color: white;
+}
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+#titular{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    color: #CC196C;
+    font-size: 2em;
+}
+.caixa{
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    flex: 1;
+    padding: 0.5em;
+}
+
+
+.caixa2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 20%;
+}
+
+#caixa1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family: 'RetroFont', monospace;
+    font-size: 48px;
+    color: #FFD700;
+    text-shadow:
+      2px 2px 0 #000066,
+      4px 4px 0 #000033;
+}
+.caixa h2{
+    margin-bottom: 1em;
+    color: #CC196C;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.caixa a{
+    margin-top: 1em;
+    text-decoration: none;
+    color: white;
+    background-color: #CC196C;
+    border: 2px solid black;
+    padding: 1em;
+    border-radius: 7px;
+    transition-duration: 1s;
+    font-family: 'Press Start 2P', monospace;
+}
+.caixa a:hover{
+    color: black;
+    background-color: #FFD700;
+    font-size: 1.3em;
+    font-family: 'Press Start 2P', monospace;
+    
+}
+
+#nave {
+    flex: 1;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#gridWrapper{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.gridWrapper {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px){
+        #gridWrapper2{flex-direction: column;}
+    }
+    
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #nave{flex: none;}
+    }
+    
+    
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        
+    }
+    
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+    }
+
+    @media only screen and (max-width: 474px){
+  #nave {
+    flex: 1;
+  }
+  
+  }

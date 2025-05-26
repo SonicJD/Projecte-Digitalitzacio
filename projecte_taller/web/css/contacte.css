@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'RetroFont', monospace;
+    pointer-events: auto; 
+  }
+  
+
+  ::-webkit-scrollbar {
+  width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: black; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #313131; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #575757; 
+  }
+  :root {
+    --header-height: 35px; /* valor inicial por defecto */
+  }
+
+  #nav{
+    border-bottom: 1px solid brown;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .selects {
+    width: 100%;
+  }
+  nav ul li{
+    display: inline-block;
+    width: 8em;
+    text-align: center;
+    font-size: 1.25em;
+
+  }
+
+  nav ul li a{
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    color: #CC196C;
+    transition: color 0.1s;
+    transition: font-size 1s;
+  }
+
+  nav ul li a:hover{
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    color: #CC196C;
+    font-size: 1.25em;
+  }
+
+  header {
+    width: 100%;
+  }
+  body {
+    color: #9CAD8A;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+  }
+  
+  .containergran {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .container {
+    max-width: 500px;
+    background-color: black;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto;
+    flex: 1;
+  }
+  .container2 {
+
+    max-width: 500px;
+    background-color: black;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto;
+    flex: 1;
+  }
+
+  #banner{
+    display: flex;
+    justify-content: center;
+  }
+  #titol{
+      display: flex;
+      align-items: center;
+      flex: 5;
+  }
+  #logo{
+      width: 150px;
+  }
+  h1 {
+    font-family: 'RetroFont', monospace;
+    font-size: 48px;
+    color: #FFD700;
+    text-shadow:
+      2px 2px 0 #000066,
+      4px 4px 0 #000033;
+  }
+  
+  p {
+    margin-bottom: 1.5em;
+    color: #CC196C;
+  }
+  
+
+  form label {
+    color: #CC196C;
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  
+  form input,
+  form textarea,
+  .selects {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border: 1px solid #CC196C;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: #fff;
+    color: black
+  }
+  
+  form button, #boton {
+    background-color: #CC196C;
+    color: black;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 1em auto;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover,#boton:hover {
+    background-color: #FFD700;
+  }
+
+.modal {
+  position: fixed;
+  top: var(--header-height); left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background:black;
+  padding: 20px;
+  border-radius: 8px;
+  pointer-events: auto; 
+}
+
+.auth-tabs {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.auth-tabs button {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  background: #eee;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin: 1em;
+  border-radius: 8px;
+}
+
+.auth-tabs button.active, .auth-tabs button:hover  {
+  background: #007bff;
+  color: white;
+}
+
+#consultasinci {
+  display: none;
+  padding-top: 2em;
+}
+
+#cajaconsultasinci {
+  padding-top: 2em;
+}
+
+@media only screen and (max-width: 1000px){
+  .containergran {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 478px){
+  #nave {
+    flex: 1;
+  }
+  
+}

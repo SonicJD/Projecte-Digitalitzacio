@@ -1,0 +1,45 @@
+version: '3'
+services:
+  db:
+    image: mariadbedit
+    environment:
+      MYSQL_ROOT_PASSWORD: Educem00.
+      MYSQL_DATABASE: Projecte
+    networks:
+      taller_net:
+        ipv4_address: 172.18.0.2
+    ports:
+      - "3336:3306"
+    volumes:
+      - ./db_schema.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./scripts:/etc/backup/
+    command: mariadbd
+
+  api:
+    image: api
+    ports:
+      - "5000:5000"
+      - "53:53/udp"
+      - "53:53/tcp"
+    depends_on:
+      - db
+    networks:
+      taller_net:
+        ipv4_address: 172.18.0.4
+
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./web:/usr/share/nginx/html 
+    ports:
+      - "8080:80"
+    networks:
+      taller_net:
+        ipv4_address: 172.18.0.3
+
+networks:
+  taller_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16

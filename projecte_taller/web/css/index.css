@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: black; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #313131; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #575757; 
+}
+
+#llibreria{
+    color: #CF7A5B;
+}
+#virtual{
+    color: #80997C;
+}
+
+li{
+    color: #9CAD8A;
+}
+#banner{
+    display: flex;
+    justify-content: center;
+}
+#titol{
+    display: flex;
+    align-items: center;
+    flex:5
+}
+#logo{
+    width: 150px;
+}
+#nav{
+    border-bottom: 1px solid brown;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+nav ul li{
+    display: inline-block;
+    width: 8em;
+    text-align: center;
+    font-size: 1.25em;
+       
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    color: #CC196C;
+    transition: color 0.1s;
+    transition: font-size 1s;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    color: #CC196C;
+    font-size: 1.25em;
+}
+main{
+    margin-top: 3em;
+    background-color: white;
+}
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+#titular{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    color: #CC196C;
+    font-size: 2em;
+}
+.caixa{
+    width: 25vw;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    
+}
+
+#caixa1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    margin-bottom: 1em;
+    color: #CC196C;
+    font-family: 'Press Start 2P', monospace;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    hyphens: auto;
+}
+
+h1{
+    font-family: 'RetroFont', monospace;
+    font-size: 48px;
+    color: #FFD700;
+    text-shadow:
+      2px 2px 0 #000066,
+      4px 4px 0 #000033;
+    display: flex;
+    justify-content: center;
+}
+.caixa h2{
+    margin-bottom: 1em;
+    color: #CC196C;
+    font-family: 'Press Start 2P', monospace;
+}
+
+.caixa a{
+    margin-top: 1em;
+    text-decoration: none;
+    color: white;
+    background-color: #CC196C;
+    border: 2px solid black;
+    padding: 1em;
+    border-radius: 7px;
+    transition-duration: 1s;
+    font-family: 'Press Start 2P', monospace;
+}
+.caixa a:hover{
+    color: black;
+    background-color: #FFD700;
+    font-size: 1.3em;
+    font-family: 'Press Start 2P', monospace;
+    
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+
+
+#gridWrapper2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#caixa9 {
+    width: 100%;
+}
+
+#gridWrapper3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgbanner {
+    width: 100%;
+    height: 300px;
+}
+#caixa1 {
+    width: 100%;
+}
+
+#caixa2 {
+    width: 90%;
+}
+
+#caixa10,#caixa11,#caixa12 {flex: 1;}
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px){
+        #gridWrapper{grid-template: repeat(12,1fr) / repeat(1,1fr);}
+        #gridWrapper2{flex-direction: column;}
+        .imgbanner{height: 400px;}
+    }
+    
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        #gridWrapper{grid-template: repeat(4,1fr) / repeat(2,1fr);}
+        .imgbanner{height: 500px;}
+    }
+    
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+      #gridWrapper{grid-template: repeat(4,1fr) / repeat(3,1fr);}
+      .imgbanner{height: 800px; width: 90%;}
+      #gridWrapper2{flex-direction: row;}
+    }
+    
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+    }
+
+    @media only screen and (max-width: 473px){
+    #nave {
+        flex: 1;
+    }
+    
+    }

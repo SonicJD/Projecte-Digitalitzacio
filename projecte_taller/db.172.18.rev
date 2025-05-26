@@ -1,0 +1,14 @@
+$TTL    604800
+@       IN      SOA     ns.taller.local. admin.taller.local. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+
+@       IN      NS      ns.taller.local.
+ns      IN      A       172.18.0.4
+
+4       IN      PTR     api.taller.local.
+2       IN      PTR     bbdd.taller.local.
+3       IN      PTR     web.taller.local.

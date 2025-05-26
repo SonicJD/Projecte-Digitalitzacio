@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="img/ico/logo.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="css/contacte.css">
+  <script src="js/script.js"></script>
+</head>
+<header id="header">
+    <div id="nav">
+        <div id="titol">
+        <img id="logo" src="img/logotip.png" alt="logo">
+    </div>
+    <div id="nave">
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="consoles.html">Consoles</a></li>
+            <li><a href="accessoris.html">Accessoris</a></li>
+            <li><a href="contacte.html"><u>Contacte</u> </a></li>
+          </ul>
+        </nav>
+    </div>
+    </div>
+  </header>
+<body style="background-image: url('img/fons.png');">
+  <div class="containergran">
+    <div class="container">
+      <h1>Contactans</h1>
+      <p>Ens encantaria saber de tu. Omple el formulari i ens posarem en contacte amb tu al més aviat possible.
+      <form id="citaForm">
+
+      <label for="client_DNI">DNI:</label>
+      <input type="text" id="client_DNI" name="client_DNI" placeholder="DNI" required>
+
+        <label for="consoles_id">Escull una consola:</label>
+        <select id="consoles_id" class="selects" name="consoles_id">
+            <option value="">Cap consola</option>
+        </select>
+
+        <label for="accessoris_id">O escull un accessori:</label>
+        <select id="accessoris_id" class="selects" name="accessoris_id">
+            <option value="">Cap accessori</option>
+        </select>
+
+        <label for="data_cita">Data de la cita:</label>
+        <input type="text" id="data_cita" name="data_cita">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+        const citasOcupadas = ["2025-05-14T10:00", "2025-05-15T15:30"].map(d => new Date(d));
+        flatpickr("#data_cita", {
+          enableTime: true,
+          dateFormat: "Y-m-d\\TH:i",
+          minDate: "today",
+          disable: [
+            function(date) {
+              return citasOcupadas.some(disabledDate => date.getTime() === disabledDate.getTime());
+            }
+          ]
+        });
+      </script>
+
+        <label for="servei_solicitat">Servei sol·licitat:</label>
+        <textarea id="servei_solicitat" name="servei_solicitat" required></textarea>
+
+        <button type="submit" id="env">Enviar</button>
+
+
+      </form>
+      <button type="submit" id="boton">Consultar incidencies</button>
+      <div id="authModal" class="modal">
+        <div class="modal-content">
+          <div class="auth-tabs">
+            <button id="showLogin" class="active"  >Login</button>
+            <button id="showRegister">Registre</button>
+          </div>
+          <div id="loginFormContainer">
+            <form id="loginForm">
+              <label for="dniLogin">DNI:</label>
+              <input type="text" id="dniLogin" required>
+              <button type="submit">Iniciar sessio</button>
+            </form>
+          </div>
+          <div id="registerFormContainer" style="display:none;">
+            <form id="registerForm">
+              <label for="dniRegister">DNI:</label>
+              <input type="text" id="dniRegister" required>
+              <label for="nomRegister">Nom:</label>
+              <input type="text" id="nomRegister" required>
+              <label for="telefonRegister">Telefon:</label>
+              <input type="text" id="telefonRegister" required>
+              <label for="correuRegister">Correu:</label>
+              <input type="email" id="correuRegister" required>
+              <button type="submit">Registrarse</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="consultasinci" class="container2">
+      <h1>Aquestes son les teves incidencies</h1>
+      <div id="cajaconsultasinci"></div>
+    </div>
+  </div>
+  <script>
+    const header = document.getElementById('header');
+    const menu = document.getElementById('authModal');
+
+    function actualizarTop() {
+      const alturaHeader = header.getBoundingClientRect().height;
+      menu.style.top = `${alturaHeader}px`;
+    }
+
+    actualizarTop();
+
+    const observer = new ResizeObserver(() => {
+      actualizarTop();
+    });
+    observer.observe(header);
+</script>
+</body>
+</html>
